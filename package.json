@@ -4,10 +4,10 @@
   "author": "Ben Frederickson <ben@benfrederickson.com> (http:/www.benfrederickson.com)",
   "url": "https://github.com/benfred/venn.js/issues",
   "devDependencies": {
+    "jshint": "^2.8.0",
     "rollup": "0.27",
     "tape": "4",
-    "uglify-js": "2",
-    "jshint": "^2.8.0"
+    "uglify-js-harmony": "^2.7.5"
   },
   "description": "Area Proportional Venn and Euler Diagrams",
   "main": "build/venn.js",

@@ -175,13 +175,24 @@ export function circleOverlap(r1, r2, d) {
     }
 
     // completely overlapped
-    if (d <= Math.abs(r1 - r2)) {
-        return Math.PI * Math.min(r1, r2) * Math.min(r1, r2);
-    }
-
+      if (d <= Math.abs(r1 - r2)) {
+            //console.log("formula 1");
+            var cO = Math.PI * Math.min(r1, r2) * Math.min(r1, r2);
+            if (Math.abs(cO)< 0.0001) {
+cO = 0;
+}
+//console.log(cO.toPrecision(7));
+return cO
+}
     var w1 = r1 - (d * d - r2 * r2 + r1 * r1) / (2 * d),
         w2 = r2 - (d * d - r1 * r1 + r2 * r2) / (2 * d);
-    return circleArea(r1, w1) + circleArea(r2, w2);
+ var cO = circleArea(r1, w1) + circleArea(r2, w2);
+//console.log("formula 2");
+if (Math.abs(cO)< 0.0001) {
+cO = 0;
+}
+//console.log(cO.toPrecision(7));
+return cO.toPrecision(7)
 }
 
 /** Given two circles (containing a x/y/radius attributes),
