@@ -1,6 +1,6 @@
 {
-  "name": "venn.js",
-  "version": "0.2.14",
+  "name": "@nwaltham/venn.js",
+  "version": "0.2.14.2",
   "author": "Ben Frederickson <ben@benfrederickson.com> (http:/www.benfrederickson.com)",
   "url": "https://github.com/benfred/venn.js/issues",
   "devDependencies": {
@@ -38,10 +38,10 @@
     "esnext": true
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup -g d3-selection:d3,d3-transition:d3 -f umd -n venn -o build/venn.js -- index.js && cp build/venn.js .",
-    "test": "jshint src/*.js && tape 'tests/**/*test.js'",
+    "pretest": "rimraf build && mkdir build && rollup -g d3-selection:d3,d3-transition:d3 -f umd -n venn -o build/venn.js -- index.js && cp-cli build/venn.js ./venn.js",
+    "test": "jshint src/layout.js src/diagram.js src/circleintersection.js && tape 'tests/**/*test.js'",
     "prepublish": "npm run test && uglifyjs build/venn.js -c -m -o build/venn.min.js",
-    "postpublish": "zip -j build/venn.zip -- LICENSE README.md build/venn.js build/venn.min.js"
+    "postpublish": "zip -j build/venn.zip LICENSE README.md build/venn.js build/venn.min.js"
   },
   "dependencies": {
     "fmin": "0.0.2",
