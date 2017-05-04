@@ -182,17 +182,17 @@ export function circleOverlap(r1, r2, d) {
 cO = 0;
 }
 //console.log(cO.toPrecision(7));
-return cO
+return cO;
 }
     var w1 = r1 - (d * d - r2 * r2 + r1 * r1) / (2 * d),
         w2 = r2 - (d * d - r1 * r1 + r2 * r2) / (2 * d);
- var cO = circleArea(r1, w1) + circleArea(r2, w2);
+ var c1 = circleArea(r1, w1) + circleArea(r2, w2);
 //console.log("formula 2");
-if (Math.abs(cO)< 0.0001) {
-cO = 0;
+if (Math.abs(c1)< 0.0001) {
+c1 = 1;
 }
 //console.log(cO.toPrecision(7));
-return cO.toPrecision(7)
+return c1.toPrecision(7);
 }
 
 /** Given two circles (containing a x/y/radius attributes),

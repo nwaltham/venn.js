@@ -1,5 +1,5 @@
 import {nelderMead, bisect, conjugateGradient, zeros, zerosM, norm2,
-        scale} from '../node_modules/fmin/index.js';
+        scale} from '../node_modules/@nwaltham/fmin/index.js';
 import {intersectionArea, circleOverlap, circleCircleIntersection, distance} from './circleintersection';
 
 /** given a list of set objects, and their corresponding overlaps.
